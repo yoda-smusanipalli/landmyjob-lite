@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { requireUser } from "@/lib/supabase/server";
 import { getJobs, getResumes } from "@/lib/data";
-import { analyze, MAX_SCORE } from "@/lib/engine";
-import { BandChip, ScoreMeter, bandStyle } from "@/components/ui";
+import { analyze, lowScorePlan, LOW_SCORE_THRESHOLD, MAX_SCORE, type LowScorePlan } from "@/lib/engine";
+import type { JobRow, ResumeRow } from "@/lib/data";
+import { BandChip, ScoreBadge, ScoreMeter, bandStyle } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,87 @@ function RequirementLabel({ options, matched }: { options: string[]; matched: st
         </span>
       ))}
     </>
+  );
+}
+
+/** Shown for scores below LOW_SCORE_THRESHOLD: what else the user can do besides applying as is. */
+function LowScoreOptions({ plan, resume, job }: { plan: LowScorePlan<ResumeRow, JobRow>; resume: ResumeRow; job: JobRow }) {
+  const { result, gaps, potential, seniorityNote, betterResume, betterJobs } = plan;
+  const gain = potential.score > result.score;
+  return (
+    <section className="card border-amber-200 bg-amber-50/40">
+      <h2 className="font-semibold">Below {LOW_SCORE_THRESHOLD}: your options</h2>
+      <p className="mt-1 text-sm text-slate-600">This resume is a long shot for this role as it stands. Here&rsquo;s what could change that.</p>
+      <ol className="mt-4 space-y-4 text-sm text-slate-700">
+        {betterResume && (
+          <li>
+            <h3 className="font-medium text-ink">Use a different resume version</h3>
+            <p className="mt-1">
+              <span className="font-medium">{betterResume.resume.label}</span> scores{" "}
+              <span className="font-medium tabular-nums">{betterResume.result.score.toFixed(1)}</span> for this job instead of{" "}
+              <span className="tabular-nums">{result.score.toFixed(1)}</span>.{" "}
+              <Link href={`/analyze?resume=${betterResume.resume.id}&job=${job.id}`} className="text-brand hover:underline">
+                Analyze with it
+              </Link>
+            </p>
+          </li>
+        )}
+
+        {(gaps.length > 0 || seniorityNote) && (
+          <li>
+            <h3 className="font-medium text-ink">{gaps.length > 0 ? "Close the skill gaps you can back up" : "Skills aren't the problem"}</h3>
+            {gaps.length > 0 && (
+              <>
+                <ul className="mt-2 flex flex-wrap gap-2">
+                  {gaps.map((g) => (
+                    <li key={g.label} className={`chip ${g.listedOnly ? "bg-amber-50 text-amber-800 ring-1 ring-amber-200" : "bg-rose-50 text-rose-700 ring-1 ring-rose-200"}`}>
+                      {g.label}{g.listedOnly && " (skills list only)"}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2">
+                  If you&rsquo;ve used these, add a bullet in your current role showing each one.
+                  {gain && (
+                    <> That would take this match to <span className="font-medium tabular-nums">{potential.score.toFixed(1)}</span> ({potential.band}).</>
+                  )}
+                  {" "}Don&rsquo;t claim skills you don&rsquo;t have; learn them first or pick a closer role.
+                </p>
+              </>
+            )}
+            {seniorityNote && (
+              <p className="mt-2">
+                {gaps.length > 0 ? "Seniority also counts against this match, and skills can't fix that: " : "The score is held down by seniority: "}
+                {seniorityNote}
+              </p>
+            )}
+          </li>
+        )}
+
+        <li>
+          <h3 className="font-medium text-ink">Focus on better-fit roles</h3>
+          {betterJobs.length > 0 ? (
+            <>
+              <p className="mt-1">These saved jobs are already a good fit for this resume:</p>
+              <ul className="mt-2 space-y-2">
+                {betterJobs.map(({ job: j, result: r }) => (
+                  <li key={j.id} className="flex items-center justify-between gap-3 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200">
+                    <Link href={`/analyze?resume=${resume.id}&job=${j.id}`} className="font-medium text-brand hover:underline">
+                      {j.title}{j.company ? `, ${j.company}` : ""}
+                    </Link>
+                    <ScoreBadge score={r.score} band={r.band} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="mt-1">
+              None of your saved jobs is a good fit for this resume yet.{" "}
+              <Link href="/jobs/new" className="text-brand hover:underline">Add roles</Link> closer to your current experience.
+            </p>
+          )}
+        </li>
+      </ol>
+    </section>
   );
 }
 
@@ -40,6 +122,7 @@ export default async function AnalyzePage({ searchParams }: { searchParams: { re
 
   const result = analyze(resume.raw_text, job.raw_text, job.title);
   const style = bandStyle(result.band);
+  const plan = lowScorePlan(resume, job, resumes, jobs);
 
   return (
     <div className="space-y-6">
@@ -89,6 +172,8 @@ export default async function AnalyzePage({ searchParams }: { searchParams: { re
         </section>
 
         <div className="space-y-6">
+          {plan && <LowScoreOptions plan={plan} resume={resume} job={job} />}
+
           {result.tips.length > 0 && (
             <section className="card">
               <h2 className="font-semibold">What to change</h2>

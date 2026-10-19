@@ -160,6 +160,22 @@ export function scoreFit(resume: ResumeProfile, job: JobProfile): FitResult {
   };
 }
 
+/**
+ * The score this resume would get if every required skill were backed by a bullet in the most
+ * recent role. For an either/or requirement the best option already on the resume is used,
+ * otherwise the first. Seniority is left as is, so it shows how far skills alone can go.
+ */
+export function potentialFit(resume: ResumeProfile, job: JobProfile): FitResult {
+  const skills = new Map(resume.skills);
+  const recentSkills = resume.recentSkills === null ? null : new Set(resume.recentSkills);
+  for (const options of job.required) {
+    const skill = bestMatch(options, resume).matched ?? options[0];
+    skills.set(skill, "experience");
+    recentSkills?.add(skill);
+  }
+  return scoreFit({ ...resume, skills, recentSkills }, job);
+}
+
 function buildTips(args: {
   required: RequirementResult[];
   nice: Array<{ skill: string; evidence: Evidence | null }>;

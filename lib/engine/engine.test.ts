@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { analyze, bandFor, parseJob, parseResume } from "./index";
+import { analyze, bandFor, lowScorePlan, parseJob, parseResume } from "./index";
 import { mergedMonths, parseDateToken } from "./resume";
 import { groupLine } from "./job";
 import { findSkills } from "./skills";
@@ -161,5 +161,41 @@ describe("scoring", () => {
     expect(bandFor(4.4)).toBe("Good fit");
     expect(bandFor(2.5)).toBe("Stretch");
     expect(bandFor(2.4)).toBe("Weak fit");
+  });
+});
+
+describe("low score plan", () => {
+  const resume = { id: "base", raw_text: RESUME };
+  const rustJob = { id: "rust", title: "Systems Engineer", raw_text: "Requirements:\n- Rust\n- Go\n- GraphQL\n- React" };
+  const reactJob = { id: "react", title: "Frontend Engineer", raw_text: "Requirements:\n- React\n- TypeScript\n- 5+ years" };
+
+  it("returns nothing when the score is already 3 or more", () => {
+    expect(lowScorePlan(resume, reactJob, [resume], [reactJob], NOW)).toBeNull();
+  });
+
+  it("lists missing skills first, then skills-list-only ones, and projects the score with them shown", () => {
+    const plan = lowScorePlan(resume, rustJob, [resume], [rustJob], NOW)!;
+    expect(plan.result.score).toBeLessThan(3);
+    expect(plan.gaps).toEqual([
+      { label: "Rust", listedOnly: false },
+      { label: "Go", listedOnly: false },
+      { label: "GraphQL", listedOnly: true },
+    ]);
+    expect(plan.potential.score).toBe(5);
+    expect(plan.seniorityNote).toBeNull();
+  });
+
+  it("suggests a higher-scoring resume version and better-fit saved jobs", () => {
+    const rustResume = { id: "rust", raw_text: RESUME.replace("- Built the dashboard", "- Wrote Rust and Go services with GraphQL. Built the dashboard") };
+    const plan = lowScorePlan(resume, rustJob, [resume, rustResume], [rustJob, reactJob], NOW)!;
+    expect(plan.betterResume?.resume.id).toBe("rust");
+    expect(plan.betterJobs.map((j) => j.job.id)).toEqual(["react"]);
+  });
+
+  it("explains when seniority counts against the match, which skills can't fix", () => {
+    const staffJob = { id: "staff", title: "Staff Engineer", raw_text: "Requirements:\n- Rust\n- Go\n- 15+ years" };
+    const plan = lowScorePlan(resume, staffJob, [resume], [staffJob], NOW)!;
+    expect(plan.potential.score).toBeLessThan(5); // seniority caps the projection
+    expect(plan.seniorityNote).toContain("15+ years");
   });
 });

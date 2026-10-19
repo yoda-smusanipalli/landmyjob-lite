@@ -35,3 +35,12 @@ export type BandLabel = "Strong fit" | "Good fit" | "Stretch" | "Weak fit";
 
 /** Recency below this share triggers a tip. */
 export const RECENCY_TIP_THRESHOLD = 0.5;
+
+/** Scores below this get a plan with alternatives (better resume version, better-fit jobs, projected score). */
+export const LOW_SCORE_THRESHOLD = 3;
+
+/** Another saved job is suggested as a better fit only at or above this score (the "Good fit" band). */
+export const ALTERNATIVE_MIN_SCORE = 3.5;
+
+/** At most this many better-fit jobs are suggested. */
+export const MAX_ALTERNATIVE_JOBS = 3;

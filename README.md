@@ -30,6 +30,7 @@ Job seekers who want to know, **before they apply**, how well their resume match
 - **Resumes:** upload PDF / DOCX / TXT or paste text; save multiple named versions
 - **Jobs:** upload or paste a JD; required and nice-to-have skills are extracted automatically
 - **Analysis:** 0–5 fit score with a per-component breakdown, matched and missing skills, evidence strength and prioritized tips
+- **Low-score options:** below 3, the analysis adds what to do instead: a resume version that scores 3+ for the job, a projected score if the skill gaps were backed by experience bullets (with a note when seniority is the real blocker), and up to 3 saved jobs that are already a good fit (3.5+). Try it: base resume vs. *Staff Platform Engineer*
 - **Ranking:** the dashboard ranks every saved job for the selected resume
 - **Compare:** all resume versions side by side against one job, with the strongest version called out
 - **Pipeline:** move each job through Saved → Applied → Interviewing → Offer / Rejected
@@ -91,7 +92,7 @@ Scores are computed on read, not stored, so they always reflect the current engi
 cp .env.example .env.local   # paste your project URL and anon key (Project Settings → API)
 npm install
 npm run dev                  # http://localhost:3000
-npm test                     # 25 unit tests: engine + file extraction
+npm test                     # 29 unit tests: engine + file extraction
 ```
 
 Test upload files are in [`test-files/`](test-files) (the demo resume as PDF and DOCX).

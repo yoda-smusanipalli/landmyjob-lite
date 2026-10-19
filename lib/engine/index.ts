@@ -4,11 +4,13 @@ import { scoreFit, type FitResult } from "./score";
 
 export { parseJob } from "./job";
 export { parseResume } from "./resume";
-export { scoreFit, bandFor } from "./score";
+export { scoreFit, potentialFit, bandFor } from "./score";
 export type { FitResult, ComponentScore, RequirementResult } from "./score";
+export { lowScorePlan } from "./plan";
+export type { LowScorePlan, SkillGap } from "./plan";
 export type { JobProfile } from "./job";
 export type { ResumeProfile } from "./resume";
-export { MAX_SCORE, WEIGHTS, BANDS } from "./constants";
+export { MAX_SCORE, WEIGHTS, BANDS, LOW_SCORE_THRESHOLD, ALTERNATIVE_MIN_SCORE } from "./constants";
 
 /** One-call analysis from raw text. */
 export function analyze(resumeText: string, jobText: string, jobTitle = "", now: Date = new Date()): FitResult {
