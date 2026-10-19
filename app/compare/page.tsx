@@ -25,17 +25,9 @@ export default async function ComparePage({ searchParams }: { searchParams: { jo
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="text-sm text-slate-500">Comparing {resumes.length} resume versions for</p>
-          <h1 className="text-2xl font-semibold">{job.title}{job.company ? <span className="font-normal text-slate-500">, {job.company}</span> : null}</h1>
-        </div>
-        <form action="/compare" className="flex items-end gap-2">
-          <select name="job" defaultValue={job.id} className="input" aria-label="Job">
-            {jobs.map((j) => <option key={j.id} value={j.id}>{j.title}{j.company ? `, ${j.company}` : ""}</option>)}
-          </select>
-          <button className="btn-ghost">Switch</button>
-        </form>
+      <div>
+        <p className="text-sm text-slate-500">Comparing {resumes.length} resume versions for</p>
+        <h1 className="text-2xl font-semibold">{job.title}{job.company ? <span className="font-normal text-slate-500">, {job.company}</span> : null}</h1>
       </div>
 
       {ranked.length > 1 && (
