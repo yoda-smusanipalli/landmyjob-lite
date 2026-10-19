@@ -1,0 +1,692 @@
+{
+  "_notes": "Seed data for LandMyJob Lite. Aliases match case-insensitively on word boundaries unless caseSensitive is true. Ambiguous everyday words (rest, safe, spring, express) are excluded or case-sensitive to avoid false matches.",
+  "skills": [
+    {
+      "skill": "JavaScript",
+      "aliases": [
+        "javascript",
+        "js",
+        "es6",
+        "ecmascript"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "TypeScript",
+      "aliases": [
+        "typescript",
+        "ts"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "Python",
+      "aliases": [
+        "python",
+        "python3"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "Java",
+      "aliases": [
+        "java"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "Go",
+      "aliases": [
+        "golang",
+        "Go"
+      ],
+      "category": "language",
+      "caseSensitive": true
+    },
+    {
+      "skill": "Rust",
+      "aliases": [
+        "rust"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "C#",
+      "aliases": [
+        "c#",
+        "csharp",
+        ".net",
+        "dotnet"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "SQL",
+      "aliases": [
+        "sql"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "Bash",
+      "aliases": [
+        "bash",
+        "shell scripting",
+        "shell"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "Scala",
+      "aliases": [
+        "scala"
+      ],
+      "category": "language"
+    },
+    {
+      "skill": "React",
+      "aliases": [
+        "react",
+        "react.js",
+        "reactjs"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Next.js",
+      "aliases": [
+        "next.js",
+        "nextjs"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Vue",
+      "aliases": [
+        "vue",
+        "vue.js",
+        "vuejs"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Angular",
+      "aliases": [
+        "angular"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "HTML",
+      "aliases": [
+        "html",
+        "html5"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "CSS",
+      "aliases": [
+        "css",
+        "css3",
+        "sass",
+        "scss"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Tailwind CSS",
+      "aliases": [
+        "tailwind",
+        "tailwindcss",
+        "tailwind css"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Accessibility",
+      "aliases": [
+        "accessibility",
+        "a11y",
+        "wcag"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Redux",
+      "aliases": [
+        "redux"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Figma",
+      "aliases": [
+        "figma"
+      ],
+      "category": "frontend"
+    },
+    {
+      "skill": "Node.js",
+      "aliases": [
+        "node",
+        "node.js",
+        "nodejs"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Express",
+      "aliases": [
+        "Express",
+        "Express.js",
+        "express.js",
+        "expressjs"
+      ],
+      "category": "backend",
+      "caseSensitive": true
+    },
+    {
+      "skill": "GraphQL",
+      "aliases": [
+        "graphql"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "REST APIs",
+      "aliases": [
+        "restful",
+        "rest api",
+        "rest apis",
+        "rest-based"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Microservices",
+      "aliases": [
+        "microservices",
+        "microservice"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Django",
+      "aliases": [
+        "django"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "FastAPI",
+      "aliases": [
+        "fastapi"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Spring Boot",
+      "aliases": [
+        "spring boot",
+        "spring framework"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "gRPC",
+      "aliases": [
+        "grpc"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Kafka",
+      "aliases": [
+        "kafka"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "Redis",
+      "aliases": [
+        "redis"
+      ],
+      "category": "backend"
+    },
+    {
+      "skill": "PostgreSQL",
+      "aliases": [
+        "postgres",
+        "postgresql"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "MySQL",
+      "aliases": [
+        "mysql"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "MongoDB",
+      "aliases": [
+        "mongodb",
+        "mongo"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "DynamoDB",
+      "aliases": [
+        "dynamodb"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "Snowflake",
+      "aliases": [
+        "snowflake"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "Spark",
+      "aliases": [
+        "spark",
+        "pyspark",
+        "apache spark"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "Airflow",
+      "aliases": [
+        "airflow",
+        "apache airflow"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "dbt",
+      "aliases": [
+        "dbt"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "ETL",
+      "aliases": [
+        "etl",
+        "elt",
+        "data pipelines",
+        "data pipeline"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "Data Modeling",
+      "aliases": [
+        "data modeling",
+        "data modelling",
+        "dimensional modeling"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "Tableau",
+      "aliases": [
+        "tableau"
+      ],
+      "category": "data"
+    },
+    {
+      "skill": "AWS",
+      "aliases": [
+        "aws",
+        "amazon web services"
+      ],
+      "category": "cloud"
+    },
+    {
+      "skill": "GCP",
+      "aliases": [
+        "gcp",
+        "google cloud",
+        "google cloud platform"
+      ],
+      "category": "cloud"
+    },
+    {
+      "skill": "Azure",
+      "aliases": [
+        "azure",
+        "microsoft azure"
+      ],
+      "category": "cloud"
+    },
+    {
+      "skill": "Lambda",
+      "aliases": [
+        "lambda",
+        "aws lambda",
+        "serverless"
+      ],
+      "category": "cloud"
+    },
+    {
+      "skill": "S3",
+      "aliases": [
+        "s3"
+      ],
+      "category": "cloud"
+    },
+    {
+      "skill": "Docker",
+      "aliases": [
+        "docker",
+        "containers",
+        "containerization"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Kubernetes",
+      "aliases": [
+        "kubernetes",
+        "k8s",
+        "eks",
+        "gke",
+        "aks"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Terraform",
+      "aliases": [
+        "terraform",
+        "infrastructure as code",
+        "iac"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "CI/CD",
+      "aliases": [
+        "ci/cd",
+        "cicd",
+        "continuous integration",
+        "continuous delivery",
+        "continuous deployment"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "GitHub Actions",
+      "aliases": [
+        "github actions"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Jenkins",
+      "aliases": [
+        "jenkins"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Helm",
+      "aliases": [
+        "helm"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Prometheus",
+      "aliases": [
+        "prometheus"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Grafana",
+      "aliases": [
+        "grafana"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Observability",
+      "aliases": [
+        "observability",
+        "monitoring",
+        "datadog",
+        "opentelemetry"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Linux",
+      "aliases": [
+        "linux",
+        "unix"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "SRE",
+      "aliases": [
+        "sre",
+        "site reliability",
+        "slos",
+        "slo",
+        "incident response"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Git",
+      "aliases": [
+        "git"
+      ],
+      "category": "devops"
+    },
+    {
+      "skill": "Machine Learning",
+      "aliases": [
+        "machine learning",
+        "ml"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "PyTorch",
+      "aliases": [
+        "pytorch"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "TensorFlow",
+      "aliases": [
+        "tensorflow"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "LLMs",
+      "aliases": [
+        "llm",
+        "llms",
+        "large language models",
+        "genai",
+        "generative ai"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "LangChain",
+      "aliases": [
+        "langchain",
+        "langgraph"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "RAG",
+      "aliases": [
+        "rag",
+        "retrieval augmented generation",
+        "retrieval-augmented generation",
+        "vector database",
+        "vector databases"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "MLOps",
+      "aliases": [
+        "mlops",
+        "model deployment",
+        "model serving"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "NLP",
+      "aliases": [
+        "nlp",
+        "natural language processing"
+      ],
+      "category": "ml"
+    },
+    {
+      "skill": "Testing",
+      "aliases": [
+        "unit testing",
+        "integration testing",
+        "jest",
+        "vitest",
+        "pytest",
+        "tdd",
+        "automated testing"
+      ],
+      "category": "practice"
+    },
+    {
+      "skill": "System Design",
+      "aliases": [
+        "system design",
+        "distributed systems",
+        "scalability"
+      ],
+      "category": "practice"
+    },
+    {
+      "skill": "Security",
+      "aliases": [
+        "security",
+        "oauth",
+        "iam",
+        "soc 2",
+        "soc2",
+        "owasp"
+      ],
+      "category": "practice"
+    },
+    {
+      "skill": "Code Review",
+      "aliases": [
+        "code review",
+        "code reviews"
+      ],
+      "category": "practice"
+    },
+    {
+      "skill": "Mentoring",
+      "aliases": [
+        "mentoring",
+        "mentorship",
+        "mentored",
+        "mentor",
+        "coaching",
+        "coached"
+      ],
+      "category": "practice"
+    },
+    {
+      "skill": "Agile",
+      "aliases": [
+        "agile",
+        "scrum",
+        "kanban"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Jira",
+      "aliases": [
+        "jira",
+        "confluence"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Stakeholder Management",
+      "aliases": [
+        "stakeholder management",
+        "stakeholders",
+        "cross-functional"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Roadmapping",
+      "aliases": [
+        "roadmap",
+        "roadmaps",
+        "roadmapping",
+        "okrs"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Risk Management",
+      "aliases": [
+        "risk management",
+        "raid",
+        "dependency management"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Program Management",
+      "aliases": [
+        "program management",
+        "technical program management",
+        "tpm"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Hiring",
+      "aliases": [
+        "hiring",
+        "recruiting",
+        "interviewing"
+      ],
+      "category": "program"
+    },
+    {
+      "skill": "Budgeting",
+      "aliases": [
+        "budget",
+        "budgeting",
+        "headcount planning"
+      ],
+      "category": "program"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "_notes": "8 fictional job descriptions for seeding the demo account. Each jd_text uses 'Requirements:' and 'Nice to have:' headings so the extractor can split required vs nice-to-have skills. Companies are invented.",
+  "jobs": [
+    {
+      "id": "jd-01",
+      "title": "Senior Full-Stack Engineer",
+      "company": "Quillstack",
+      "location": "Los Angeles, CA",
+      "is_remote": true,
+      "seniority": "senior",
+      "expected_fit": "high",
+      "jd_text": "Quillstack builds collaborative writing tools for small teams. We're hiring a Senior Full-Stack Engineer to own features end to end, from database schema to polished UI.\n\nWhat you'll do:\n- Ship customer-facing features across our Next.js frontend and Node.js services\n- Design REST APIs and evolve our PostgreSQL data model\n- Partner with design in Figma and raise the bar on accessibility\n- Mentor mid-level engineers through code review\n\nRequirements:\n- 5+ years of professional software engineering experience\n- Strong TypeScript and React\n- Node.js and REST APIs in production\n- PostgreSQL and solid SQL\n- Testing discipline (Jest or Vitest)\n- Experience deploying on AWS\n\nNice to have:\n- Next.js App Router\n- Tailwind CSS\n- GraphQL\n- CI/CD with GitHub Actions"
+    },
+    {
+      "id": "jd-02",
+      "title": "Staff Platform Engineer",
+      "company": "Cobalt Freight",
+      "location": "Remote (US)",
+      "is_remote": true,
+      "seniority": "staff",
+      "expected_fit": "medium-low",
+      "jd_text": "Cobalt Freight moves 40,000 shipments a day. Our platform team builds the paved road every product engineer uses.\n\nWhat you'll do:\n- Set technical direction for our Kubernetes-based internal developer platform\n- Own infrastructure as code across multiple AWS accounts\n- Define SLOs and lead incident response improvements\n- Influence system design across 12 product teams\n\nRequirements:\n- 10+ years of engineering experience, 3+ at staff level or equivalent\n- Deep Kubernetes and Helm experience\n- Terraform at scale\n- Go or Python for tooling\n- AWS networking and IAM\n- Observability with Prometheus and Grafana\n\nNice to have:\n- Kafka\n- Security and SOC 2 experience\n- Mentoring senior engineers"
+    },
+    {
+      "id": "jd-03",
+      "title": "Senior Technical Program Manager",
+      "company": "Harborline Health",
+      "location": "San Diego, CA",
+      "is_remote": false,
+      "seniority": "senior",
+      "expected_fit": "low",
+      "jd_text": "Harborline Health connects patients with in-network specialists. We're looking for a Senior TPM to drive our cloud migration program.\n\nWhat you'll do:\n- Run a multi-quarter program across 6 engineering teams\n- Own the roadmap, dependency management and RAID log\n- Report status to executives and manage stakeholders across product, security and compliance\n- Facilitate Agile ceremonies and drive delivery in Jira\n\nRequirements:\n- 7+ years of technical program management experience\n- Strong stakeholder management and executive communication\n- Agile delivery using Scrum or Kanban\n- Risk management for complex programs\n- Working knowledge of AWS cloud architecture\n\nNice to have:\n- Healthcare or HIPAA experience\n- Budgeting and headcount planning\n- Hands-on background with CI/CD or Docker"
+    },
+    {
+      "id": "jd-04",
+      "title": "Frontend Developer I",
+      "company": "Tidewater Payroll",
+      "location": "Irvine, CA",
+      "is_remote": false,
+      "seniority": "junior",
+      "expected_fit": "skills high, seniority mismatch",
+      "jd_text": "Tidewater Payroll makes paying hourly workers simple. Join our frontend team as an early-career developer.\n\nWhat you'll do:\n- Build UI components in React with our design system\n- Fix bugs and write unit tests\n- Pair with senior engineers and learn our release process\n\nRequirements:\n- 0-2 years of professional experience (bootcamp grads welcome)\n- JavaScript, HTML and CSS fundamentals\n- Some experience with React\n- Familiarity with Git\n\nNice to have:\n- TypeScript\n- Accessibility awareness\n- Redux"
+    },
+    {
+      "id": "jd-05",
+      "title": "Senior Data Engineer",
+      "company": "Northwind Ledger",
+      "location": "New York, NY",
+      "is_remote": true,
+      "seniority": "senior",
+      "expected_fit": "low",
+      "jd_text": "Northwind Ledger provides real-time accounting analytics for mid-market finance teams.\n\nWhat you'll do:\n- Build and own batch and streaming data pipelines\n- Model our warehouse for analytics and finance reporting\n- Improve data quality and pipeline reliability\n\nRequirements:\n- 5+ years in data engineering\n- Python and advanced SQL\n- Spark or PySpark at scale\n- Airflow orchestration\n- Snowflake and dbt\n- Dimensional data modeling\n\nNice to have:\n- Kafka streaming\n- Scala\n- Tableau\n- AWS S3 data lakes"
+    },
+    {
+      "id": "jd-06",
+      "title": "Senior ML Engineer, GenAI",
+      "company": "Brightlane Learning",
+      "location": "San Francisco, CA",
+      "is_remote": true,
+      "seniority": "senior",
+      "expected_fit": "medium-low",
+      "jd_text": "Brightlane Learning builds AI tutors for working adults returning to school.\n\nWhat you'll do:\n- Ship LLM-powered features, from prompt design to evaluation\n- Build retrieval-augmented generation pipelines over course content\n- Productionize models with solid MLOps practices\n\nRequirements:\n- 5+ years of software engineering, 2+ in machine learning\n- Python and FastAPI\n- Hands-on with LLMs and RAG\n- LangChain or LangGraph\n- Model deployment on AWS or GCP\n\nNice to have:\n- PyTorch\n- NLP background\n- TypeScript and React for internal tools\n- Docker"
+    },
+    {
+      "id": "jd-07",
+      "title": "DevOps Engineer",
+      "company": "Pinecrest Insurance",
+      "location": "Woodland Hills, CA",
+      "is_remote": false,
+      "seniority": "mid",
+      "expected_fit": "medium",
+      "jd_text": "Pinecrest Insurance is modernizing its policy platform and needs a DevOps Engineer to speed up delivery.\n\nWhat you'll do:\n- Build CI/CD pipelines for 30+ services\n- Containerize legacy apps and move them to the cloud\n- Improve monitoring and on-call tooling\n\nRequirements:\n- 3+ years in DevOps or SRE roles\n- Docker and containerization\n- CI/CD with Jenkins or GitHub Actions\n- AWS core services\n- Linux and Bash scripting\n- Terraform\n\nNice to have:\n- Kubernetes\n- Node.js or Python for automation\n- Observability tooling such as Datadog"
+    },
+    {
+      "id": "jd-08",
+      "title": "Engineering Manager, Web Platform",
+      "company": "Lumen Grid Energy",
+      "location": "Remote (US)",
+      "is_remote": true,
+      "seniority": "manager",
+      "expected_fit": "medium",
+      "jd_text": "Lumen Grid Energy helps households track and cut their energy use. Lead the team that owns our customer web app.\n\nWhat you'll do:\n- Manage and grow a team of 7 engineers\n- Own the roadmap with product and design\n- Keep a hand in architecture and code review\n\nRequirements:\n- 8+ years of software engineering, 2+ managing engineers\n- Hiring and mentoring experience\n- Strong background in React and TypeScript\n- System design for web applications\n- Agile delivery and stakeholder management\n\nNice to have:\n- Next.js\n- GraphQL\n- Budgeting and headcount planning\n- AWS"
+    }
+  ]
+}

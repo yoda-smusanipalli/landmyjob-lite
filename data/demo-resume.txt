@@ -1,0 +1,38 @@
+ALEX RIVERA
+Senior Software Engineer | Los Angeles, CA | alex.rivera@example.com
+
+SUMMARY
+Full-stack engineer with 7 years building customer-facing web products in TypeScript, React and Node.js. Comfortable owning features end to end, from PostgreSQL schema design to accessible, polished UI, and mentoring engineers along the way.
+
+SKILLS
+Languages: TypeScript, JavaScript, Python, SQL, HTML, CSS
+Frontend: React, Next.js, Redux, Tailwind CSS, Accessibility (WCAG)
+Backend: Node.js, Express, REST APIs, GraphQL
+Data: PostgreSQL, Redis
+Cloud & DevOps: AWS (Lambda, S3), Docker, GitHub Actions, CI/CD, Git
+Practices: Testing (Jest, Vitest), Code Review, Mentoring, Agile
+
+EXPERIENCE
+
+Senior Software Engineer, Fernway Travel (Remote)
+Mar 2022 - Present
+- Led the rebuild of the booking flow in Next.js and TypeScript, cutting page load time by 40%.
+- Designed REST APIs in Node.js and Express backed by PostgreSQL, serving 2M requests per day.
+- Introduced Vitest and raised unit test coverage from 35% to 80%.
+- Set up GitHub Actions CI/CD with preview deploys on AWS.
+- Mentored 3 mid-level engineers through weekly pairing and code review.
+
+Software Engineer, Maple & Co. Retail (Los Angeles, CA)
+Jun 2019 - Feb 2022
+- Built the customer account portal in React and Redux.
+- Added a GraphQL layer over legacy services to simplify frontend data fetching.
+- Containerized services with Docker and moved background jobs to AWS Lambda.
+- Led accessibility fixes to reach WCAG 2.1 AA across checkout.
+
+Junior Web Developer, Sunset Digital Studio (Pasadena, CA)
+Aug 2017 - May 2019
+- Built marketing sites with JavaScript, HTML and CSS.
+- Wrote small Python scripts to automate content imports.
+
+EDUCATION
+B.S. Computer Science, California State University, Northridge, 2017
