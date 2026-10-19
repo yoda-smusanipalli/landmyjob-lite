@@ -4,6 +4,8 @@
 
 **Live demo:** https://landmyjob-lite-18f2.vercel.app
 
+**Source code:** https://github.com/yoda-smusanipalli/landmyjob-lite
+
 ## Getting started
 
 There are two ways to try the app.
@@ -123,4 +125,4 @@ Import the repo in Vercel and add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SU
 
 ## AI tools
 
-I used AI-assisted tools during this build and reviewed all submitted code myself.
+I used AI-assisted tools during this build.
