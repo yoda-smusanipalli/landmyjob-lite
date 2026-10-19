@@ -2,8 +2,8 @@
 
 > A 2-hour Casper take-home build. Upload your resume and a job description, and get an explainable fit score from 0 to 5 with concrete ways to close the gaps.
 
-**Live demo:** <!-- your Vercel URL -->
-**Demo account:** `<demo email>` / `<password>`, already loaded with sample data (2 resume versions, 8 job descriptions). You can also create your own account and click **Load sample data**.
+**Live demo:** https://landmyjob-lite-18f2.vercel.app
+**Demo account:** `demo@landmyjob.app` / `CasperDemo2026`, already loaded with sample data (2 resume versions, 8 job descriptions). You can also click **Sign up** to create your own account, then **Load sample data**.
 
 ---
 
@@ -99,6 +99,11 @@ Test upload files are in [`test-files/`](test-files) (the demo resume as PDF and
 ### Deploy (Vercel)
 
 Import the repo in Vercel and add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` as environment variables. If email confirmation is on, add your Vercel URL under Supabase **Authentication → URL Configuration** (Site URL and `https://<your-app>/auth/callback` as a redirect URL).
+
+Troubleshooting:
+- **"Your project's URL and Key are required"**: the variables were missing at build time. `NEXT_PUBLIC_*` values are inlined during the build, so after adding or changing them, **Redeploy** without the build cache.
+- **"Invalid path specified in request URL"**: `NEXT_PUBLIC_SUPABASE_URL` must be just the Project URL, `https://<project-id>.supabase.co`, with no trailing slash and no `/rest/v1`.
+- **"Invalid login credentials"** on a fresh deploy: no account exists yet. Use **Sign up** first.
 
 ## What I'd do next
 
