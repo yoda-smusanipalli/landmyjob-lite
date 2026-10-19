@@ -126,7 +126,6 @@ export default async function AnalyzePage({ searchParams }: { searchParams: { re
 
   return (
     <div className="space-y-6">
-      {/* Switch resume or job without leaving the page. */}
       <form className="card flex flex-wrap items-end gap-3 p-4" action="/analyze">
         <div className="min-w-[200px] flex-1">
           <label htmlFor="resume" className="label">Resume</label>

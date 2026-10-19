@@ -71,21 +71,17 @@ export function scoreFit(resume: ResumeProfile, job: JobProfile): FitResult {
   const required = job.required.map((options) => bestMatch(options, resume));
   const nice = job.nice.map((skill) => ({ skill, evidence: resume.skills.get(skill) ?? null }));
 
-  // Required: evidence-weighted coverage of required groups.
   const requiredScore =
     required.length === 0
       ? null
       : (MAX_SCORE * required.reduce((sum, r) => sum + evidenceWeight(r.evidence), 0)) / required.length;
   const requiredMatched = required.filter((r) => r.matched).length;
 
-  // Nice-to-have: plain coverage.
   const niceMatched = nice.filter((n) => n.evidence).length;
   const niceScore = nice.length === 0 ? null : (MAX_SCORE * niceMatched) / nice.length;
 
-  // Seniority.
   const sen = seniorityScore(resume.years, job);
 
-  // Recency: share of matched skills that show up in the most recent role.
   const matchedSkills = [
     ...required.map((r) => r.matched).filter((s): s is string => s !== null),
     ...nice.filter((n) => n.evidence).map((n) => n.skill),
@@ -141,7 +137,6 @@ export function scoreFit(resume: ResumeProfile, job: JobProfile): FitResult {
     },
   ];
 
-  // Weighted average over the components that apply.
   const applicable = components.filter((c) => c.score !== null);
   const totalWeight = applicable.reduce((s, c) => s + c.weight, 0);
   const raw = totalWeight === 0 ? 0 : applicable.reduce((s, c) => s + c.weight * (c.score as number), 0) / totalWeight;

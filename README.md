@@ -34,8 +34,6 @@ LandMyJob finds matching jobs, tailors your resume and cover letter for each one
 
 **This repository is a separate, fresh build.** It was written from an empty repo within the 2-hour timebox and shares no code with landmyjob.app. It focuses on one slice of that vision, fit analysis, using deterministic, explainable logic you can read end to end.
 
-
-
 ## Who it's for
 
 Job seekers who want to know, **before they apply**, how well their resume matches a role and what to change.
@@ -77,7 +75,7 @@ Every component is scored on the same 0–5 scale. The overall score is their we
 
 ```
 Next.js 14 (App Router, TypeScript, Server Components + Server Actions)
-  ├── lib/engine        scoring: skills.ts · resume.ts · job.ts · score.ts   (pure, unit tested)
+  ├── lib/engine        scoring: skills.ts · resume.ts · job.ts · score.ts · plan.ts   (pure, unit tested)
   ├── lib/extract-text  PDF (unpdf) / DOCX (mammoth) / TXT → text, line breaks preserved
   ├── app/actions.ts    mutations: create/delete resume & job, stage changes, sample data
   └── Supabase          Auth + Postgres, row-level security (users only ever see their own rows)
@@ -115,11 +113,6 @@ Test upload files are in [`test-files/`](test-files) (the demo resume as PDF and
 ### Deploy (Vercel)
 
 Import the repo in Vercel and add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` as environment variables. If email confirmation is on, add your Vercel URL under Supabase **Authentication → URL Configuration** (Site URL and `https://<your-app>/auth/callback` as a redirect URL).
-
-Troubleshooting:
-- **"Your project's URL and Key are required"**: the variables were missing at build time. `NEXT_PUBLIC_*` values are inlined during the build, so after adding or changing them, **Redeploy** without the build cache.
-- **"Invalid path specified in request URL"**: `NEXT_PUBLIC_SUPABASE_URL` must be just the Project URL, `https://<project-id>.supabase.co`, with no trailing slash and no `/rest/v1`.
-- **"Invalid login credentials"** on a fresh deploy: no account exists yet. Use **Sign up** first.
 
 ## What I'd do next
 

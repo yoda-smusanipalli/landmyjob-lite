@@ -90,7 +90,7 @@ export function mergedMonths(intervals: Array<[number, number]>): number {
 export function parseResume(text: string, now: Date = new Date()): ResumeProfile {
   const lines = text.split(/\r?\n/);
 
-  // 1. Assign every line to a section. Without any recognised headers, treat everything as experience.
+  // Without any recognised headers, treat everything as experience.
   const sectionOf: Section[] = [];
   let current: Section = "summary";
   let sawHeader = false;
@@ -104,14 +104,12 @@ export function parseResume(text: string, now: Date = new Date()): ResumeProfile
   }
   if (!sawHeader) sectionOf.fill("experience");
 
-  // 2. Skills, with evidence strength.
   const skills = new Map<string, Evidence>();
   const experienceText = lines.filter((_, i) => sectionOf[i] === "experience").join("\n");
   const otherText = lines.filter((_, i) => sectionOf[i] !== "experience").join("\n");
   for (const hit of findSkills(experienceText)) skills.set(hit.skill, "experience");
   for (const hit of findSkills(otherText)) if (!skills.has(hit.skill)) skills.set(hit.skill, "listed");
 
-  // 3. Roles from date ranges inside the experience section.
   const roles: Role[] = [];
   lines.forEach((line, i) => {
     if (sectionOf[i] !== "experience") return;
@@ -137,7 +135,7 @@ export function parseResume(text: string, now: Date = new Date()): ResumeProfile
     if (claim) years = Number(claim[1]);
   }
 
-  // 4. Most recent role = latest end date; its text runs until the next role starts.
+  // Most recent role = latest end date; its text runs until the next role starts.
   let recentSkills: Set<string> | null = null;
   let recentRole: string | null = null;
   if (roles.length > 0) {

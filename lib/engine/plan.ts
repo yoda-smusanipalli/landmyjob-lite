@@ -58,7 +58,6 @@ export function lowScorePlan<R extends { id: string; raw_text: string }, J exten
   for (const other of resumes) {
     if (other.id === resume.id) continue;
     const otherResult = scoreFit(parseResume(other.raw_text, now), jobProfile);
-    // Only worth switching to if it clears the low-score line.
     if (otherResult.score >= LOW_SCORE_THRESHOLD && otherResult.score > (betterResume?.result.score ?? 0)) {
       betterResume = { resume: other, result: otherResult };
     }

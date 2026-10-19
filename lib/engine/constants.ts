@@ -1,5 +1,3 @@
-/** All scoring knobs live here so they can be tuned without touching the logic. */
-
 export const MAX_SCORE = 5;
 
 /** Component weights. They sum to 1; components that don't apply are dropped and the rest re-weighted. */
