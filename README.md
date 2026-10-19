@@ -3,7 +3,25 @@
 > A 2-hour Casper take-home build. Upload your resume and a job description, and get an explainable fit score from 0 to 5 with concrete ways to close the gaps.
 
 **Live demo:** https://landmyjob-lite-18f2.vercel.app
-**Demo account:** `demo@landmyjob.app` / `CasperDemo2026`, already loaded with sample data (2 resume versions, 8 job descriptions). You can also click **Sign up** to create your own account, then **Load sample data**.
+
+## Getting started
+
+There are two ways to try the app.
+
+### Option 1: Create your own account
+
+1. Open the [login page](https://landmyjob-lite-18f2.vercel.app/login), enter any email and a password of at least 8 characters, and click **Sign up**. No email confirmation is needed.
+2. Your dashboard starts empty. Click **Load sample data** to add 2 versions of a fictional resume and 8 fictional job descriptions for testing.
+3. The dashboard now ranks every job for the selected resume. Open any job to see its fit score and analysis.
+
+**Load sample data** only appears on an empty account. If you'd rather use your own data, click **Add your resume** instead and upload a PDF, DOCX or TXT file.
+
+### Option 2: Sign in with the demo account
+
+1. Open the [login page](https://landmyjob-lite-18f2.vercel.app/login).
+2. Sign in with `demo@landmyjob.app` / `CasperDemo2026`.
+
+The demo account already has the sample data loaded, so you can start exploring immediately.
 
 ---
 
@@ -16,9 +34,7 @@ LandMyJob finds matching jobs, tailors your resume and cover letter for each one
 
 **This repository is a separate, fresh build.** It was written from an empty repo within the 2-hour timebox and shares no code with landmyjob.app. It focuses on one slice of that vision, fit analysis, using deterministic, explainable logic you can read end to end.
 
-### Try this first
 
-Load the sample data, then open **Compare resumes** on *DevOps Engineer*. The platform-tailored resume scores **4.4** against **3.1** for the base version, and the table shows exactly which requirements the tailoring closed.
 
 ## Who it's for
 
@@ -30,7 +46,6 @@ Job seekers who want to know, **before they apply**, how well their resume match
 - **Resumes:** upload PDF / DOCX / TXT or paste text; save multiple named versions
 - **Jobs:** upload or paste a JD; required and nice-to-have skills are extracted automatically
 - **Analysis:** 0–5 fit score with a per-component breakdown, matched and missing skills, evidence strength and prioritized tips
-- **Low-score options:** below 3, the analysis adds what to do instead: a resume version that scores 3+ for the job, a projected score if the skill gaps were backed by experience bullets (with a note when seniority is the real blocker), and up to 3 saved jobs that are already a good fit (3.5+). Try it: base resume vs. *Staff Platform Engineer*
 - **Ranking:** the dashboard ranks every saved job for the selected resume
 - **Compare:** all resume versions side by side against one job, with the strongest version called out
 - **Pipeline:** move each job through Saved → Applied → Interviewing → Offer / Rejected
